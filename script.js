@@ -125,9 +125,9 @@ function checkWin(playerSymbol, boardIndex) {
             break;
     }
     if (win && playerSymbol == "X") {
-        winner(player1);
+        winner(player1, '.player1');
     } else if (win && playerSymbol == "O") {
-        winner(player2);
+        winner(player2, '.player2');
     } else if (win == false && !gameBoard.board.includes('')) {
         tie();
     }
@@ -139,10 +139,13 @@ function tie() {
     displayOutcome.textContent = "Tie, no winner !";
 }
 
-function winner(player) {
+function winner(player, classElement) {
     empty();
     player.score += 1;
-    return alert(`${player.name} won !`);
+    const scoreDiv = document.querySelector(classElement);
+    scoreDiv.textContent = player.score;
+    const displayOutcome = document.querySelector('.winner');
+    displayOutcome.textContent = `${player.name} won the game !!!`;
 }
 
 function empty() {

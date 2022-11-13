@@ -45,8 +45,31 @@ body {
 
 .player1 {
     color: blue;
+    margin-left: 15px;
 }
 
 .player2 {
     color: green;
+    margin-left: 15px;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scoreDisplay {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.winner {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
 }
